@@ -1,0 +1,16 @@
+<div class="w-full">
+  <div class="border shadow-lg rounded-md p-2">
+    <h5 class="text-center text-2xl font-semibold ">{{project.name}}</h5>
+    <p class="mt-3 text-center">{{project.summary}}</p>
+    <div class="flex justify-center mt-3 text-white">
+      <button (click)="openPopup()" class="bg-blue-500 px-2 py-1 rounded-md text-lg">View More</button>
+    </div>
+    <div class="border-t mt-2 py-1 text-white">
+      <div class="flex justify-center flex-wrap gap-3 pt-1">
+        <div *ngFor="let tag of project.tag">
+          <div class="bg-blue-600 rounded-3xl px-3 py-1" [style.background-color]="tag.color">{{tag}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

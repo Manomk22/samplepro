@@ -1,0 +1,32 @@
+<!-- <div class="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+  <div *ngFor="let project of projects">
+    <app-project-card [project]="project" (viewMore)="openPopup(project)"></app-project-card>
+  </div>
+</div>
+
+<app-popup [project]="selectedProject" [isVisible]="showPopup" (close)="closePopup()"></app-popup> -->
+<div class="container mx-auto">
+  <div class="flex-wrap md:flex items-center  justify-start mb-4">
+    <div class="mr-4" *ngFor="let tag of tags">
+      <button 
+        class="px-3 py-1 m-1  rounded-md text-white bg-blue-500 hover:bg-blue-700" 
+        [style.background-color]="tag.color" 
+        (click)="filterProjects(tag)">
+        {{ tag }}
+      </button>
+    </div>
+    <button 
+      class="px-3 py-1 m-1 rounded-md text-white bg-gray-500 hover:bg-gray-800" 
+      (click)="resetFilter()">
+      Reset
+    </button>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div *ngFor="let project of filteredProjects">
+      <app-project-card [project]="project" (viewMore)="openPopup(project)"></app-project-card>
+    </div>
+  </div>
+
+  <app-popup [project]="selectedProject" [isVisible]="showPopup" (close)="closePopup()"></app-popup>
+</div>

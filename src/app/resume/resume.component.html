@@ -1,0 +1,55 @@
+<!-- 
+   <div class="container text-center text-white">
+    <button (click)="DownloadLink()" class="btn-primary mb-5 shadow-xl p-2 bg-blue-500 rounded-lg">
+      Download PDF Resume
+    </button>
+  </div>
+  
+  <div class="container mx-auto">
+    <div class="bg-white shadow-md rounded-lg p-5">
+      <div class="accordion">
+        <div *ngFor="let section of sections; let i = index" class="mb-4">
+          <div class="accordion-header p-4 cursor-pointer bg-blue-500 hover:bg-blue-600 text-white flex justify-between items-center rounded-lg" (click)="toggleSection(i)">
+            <h2 class="font-semibold text-lg">{{ section.title }}</h2>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div [class.hidden]="!section.isOpen" class="accordion-body p-4   rounded-b-lg">
+            <div class="p-3 rounded-lg mb-2">
+              <h3 class="text-lg font-semibold">Brief Summary</h3>
+              <p class="text-base">A brief introduction or summary can go here.</p>
+            </div>
+            <div class="p-3 rounded-lg mb-2">
+              <h3 class="text-lg font-semibold">Details</h3>
+              <p class="text-base">{{ section.content }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+   <div class="container text-center text-white">
+    <button (click)="DownloadLink()" class="btn-primary mb-5 shadow-xl p-2 bg-blue-500 rounded-lg">
+      Download PDF Resume
+    </button>
+  </div>
+  
+  <div class="container mx-auto ">
+    <div class="bg-white shadow-md rounded-lg p-5 border-t-2">
+      <div class="accordion">
+        <div *ngFor="let section of sections; let i = index" class="mb-4">
+          <div class="accordion-header p-4 cursor-pointer bg-blue-500 hover:bg-blue-600 text-white flex justify-between items-center rounded-lg" (click)="toggleSection(i)">
+            <h2 class="font-semibold text-lg">{{ section.title }}</h2>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div [class.hidden]="!section.isOpen" class="accordion-body p-4 rounded-b-lg">
+            <div *ngFor="let content of section.content" class="p-3 rounded-lg mb-2">
+              <h3 class="text-lg font-semibold">{{ content.heading }}</h3>
+              <p class="text-base">{{ content.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

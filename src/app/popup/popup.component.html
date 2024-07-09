@@ -1,0 +1,32 @@
+<div *ngIf="isVisible" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+  <div class="relative bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl mx-4">
+    <button (click)="closePopup()" class="absolute top-5 right-5">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <h2 class="text-2xl font-bold mb-4 text-center">{{project.name}}</h2>
+
+    <div *ngIf="project.pictures.length > 0" class="relative mb-4 flex items-center justify-center">
+      <button (click)="prevImage()" class="absolute left-0 ml-4 transform -translate-y-1/2 bg-gray-700 text-white rounded-full w-10 h-10 flex items-center justify-center z-20">‹</button>
+      <img [src]="project.pictures[currentIndex]" alt="Description Image" class="w-full max-w-full mx-auto">
+      <button (click)="nextImage()" class="absolute right-0 mr-4 transform -translate-y-1/2 bg-gray-700 text-white rounded-full w-10 h-10 flex items-center justify-center z-20">›</button>
+    </div>
+
+    <p class="text-gray-700 mb-4">{{project.description}}</p>
+    <p class="text-end mb-1">
+      Visit the Website
+      <a class="text-blue-500 underline hover:text-blue-700 hover:underline-offset-4 transition duration-300" href="{{project.projectLink}}">
+        Here
+      </a>
+    </p>
+
+    <div class="border-t pt-2">
+      <div class="flex justify-center flex-wrap gap-3">
+        <div *ngFor="let tag of project.tag">
+          <div class=" rounded-3xl px-3 py-1 text-white" [style.background-color]="tag.color">{{tag}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

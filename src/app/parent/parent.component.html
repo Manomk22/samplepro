@@ -1,0 +1,11 @@
+<app-project-card
+  *ngFor="let project of projects"
+  [project]="project"
+  (viewMore)="openPopup(project)"
+></app-project-card>
+
+<app-popup
+  [project]="selectedProject"
+  [isVisible]="isPopupVisible"
+  (close)="closePopup()"
+></app-popup>

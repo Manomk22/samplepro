@@ -1,0 +1,39 @@
+<div class="container mx-auto">
+    <div class="md:flex">
+      <!-- About Me -->
+      <div class="w-full md:w-1/2 border shadow-lg m-1 rounded-sm p-2">
+        <div class="text-center">
+          <h3 class="text-4xl font-semibold">About Me</h3>
+          <div class="flex justify-center">
+            <img class="w-48 h-48 rounded-full" src="../../assets/close.jpeg" alt="profilepic">
+          </div>
+          <p class="mt-1 p-3 text-xl font-light text-justify">
+            I'm a frontend developer who loves creating amazing digital experiences. I specialize in building interactive products that users love to engage with. Let's make something awesome together!.
+          </p>
+        </div>
+      </div>
+      <!-- Featured Project -->
+      <div class="w-full md:w-1/2 border shadow-lg m-1 rounded-sm p-2">
+        <div class="text-center">
+          <h3 class="text-4xl font-semibold">Featured Project</h3>
+          <h4 class="text-2xl font-medium mt-4">{{ futureProject.name }}</h4>
+          <p class="mt-2 text-lg text-gray-700">{{ futureProject.summary }}</p>
+  
+          <!-- Image Slider for Desktop -->
+          <div class="relative mt-4" *ngIf="!isMobileView">
+            <button (click)="prevImage()" class="absolute top-1/2 -translate-y-1/2 left-0 transform bg-gray-700 text-white rounded-full w-10 h-10 flex items-center justify-center z-20">‹</button>
+            <img [src]="futureProject.pictures[currentIndex]" alt="Project Image" class="w-full h-64 object-cover">
+            <button (click)="nextImage()" class="absolute top-1/2 -translate-y-1/2 right-0 transform bg-gray-700 text-white rounded-full w-10 h-10 flex items-center justify-center z-20">›</button>
+          </div>
+  
+          <!-- Single Image for Mobile -->
+          <img *ngIf="isMobileView" [src]="futureProject.pictures[currentIndex]" alt="Project Image" class="w-full h-64 object-cover mt-4">
+  
+          <a class="block mt-2 text-blue-500 underline hover:text-blue-700 hover:underline-offset-4 transition duration-300" href="{{ futureProject.projectLink }}">
+            Visit the Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
