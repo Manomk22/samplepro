@@ -83,7 +83,7 @@ export class ResumeComponent {
         },
         {
           heading: 'Programming Languages',
-          description: 'JavaScript, TypeScripta.'
+          description: 'JavaScript, TypeScript.'
         },
         {
           heading: 'Frameworks & Libraries',
@@ -106,8 +106,8 @@ export class ResumeComponent {
   DownloadLink() {
     const link = this.renderer.createElement('a');
     link.setAttribute('target', '_blank');
-    link.setAttribute('href', '../../assets/MANOfroen.pdf');
-    link.setAttribute('download', 'MANOfroen.pdf');
+    link.setAttribute('href', '../../assets/MANOfroen.pdf.pdf');
+    link.setAttribute('download', 'MANOfroen.pdf.pdf');
     link.click();
     link.remove();
   }
